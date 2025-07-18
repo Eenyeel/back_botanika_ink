@@ -1,0 +1,18 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="./favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOTANILA_INK</title>
+  <script type="module" crossorigin src="./assets/index-BnxMrAjF.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Bf8UXV9f.css">
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+</html>
