@@ -1,4 +1,3 @@
-
 package botanika_controller;
 
 import botanika_core_db.ConectionMySQL;
@@ -15,20 +14,21 @@ import java.util.List;
  * @author Angel Santamaria
  */
 public class ControllerRol {
-        public List<Rol> getAll() throws Exception {
-        String sql = "SELECT * FROM mensaje";
+
+    public List<Rol> getAll() throws Exception {
+
+        String sql = "SELECT * FROM rol";
+        ConectionMySQL connMySQL = new ConectionMySQL();
+        Connection conn = connMySQL.open();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
         List<Rol> rols = new ArrayList<>();
-
-        try (
-            Connection conn = new ConectionMySQL().open();
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            ResultSet rs = pstmt.executeQuery()
-        ) {
-            while (rs.next()) {
-                rols.add(fill(rs));
-            }
+        while (rs.next()) {
+            rols.add(fill(rs));
         }
-
+        rs.close();
+        pstmt.close();
+        connMySQL.close();
         return rols;
     }
 
